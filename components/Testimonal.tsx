@@ -146,10 +146,10 @@ function Testimonal() {
     <div className="w-[92%]  m-auto dark:bg-gray-800">
       <Carousel className="">
         <CarouselContent>
-          {testimonials.map((e,index) => (
-            <CarouselItem className="p-6 md:basis-1/2 lg:basis-1/3">
+          {testimonials.map((e, index) => (
+            <CarouselItem key={index} className="p-6 md:basis-1/2 lg:basis-1/3">
               {" "}
-              <div key={index} className=" bg-white border border-white h-[550px] rounded-lg shadow dark:bg-gray-700 dark:border-gray-700">
+              <div className=" bg-white border border-white h-[550px] rounded-lg shadow dark:bg-gray-700 dark:border-gray-700">
                 <a href="#">
                   <img
                     className="rounded-t-lg w-full h-80 relative "
@@ -185,9 +185,9 @@ function Testimonal() {
                   </div>
                   <div className="flex items-center mt-2.5  dark:bg-gray-700">
                     <div className="flex items-center space-x-1 rtl:space-x-reverse">
-                      {e.clientRating.map((e,index) => (
+                      {e.clientRating.map((e, index) => (
                         <svg
-                         key={index}
+                          key={index}
                           className="w-4 h-4 text-yellow-300"
                           aria-hidden="true"
                           xmlns="http://www.w3.org/2000/svg"

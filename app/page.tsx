@@ -35,9 +35,9 @@ export default function Home() {
       case 0:
         return "Start Your Recovery";
       case 1:
-        return "Click Next";
+        return "Two More Step Left";
       case 2:
-        return "two More step";
+        return "Click Next";
       case 3:
         return "Submit";
 
