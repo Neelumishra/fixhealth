@@ -5,7 +5,6 @@ import Form from "@/components/form/form0";
 import { Flowbite } from "flowbite-react";
 import { useState } from "react";
 import Stepper from "@/components/Stepper";
-import Indicator from "@/components/Indicator";
 import Form1 from "@/components/form/form1";
 import Form2 from "@/components/form/form2";
 import Form3 from "@/components/form/form3";
@@ -45,6 +44,7 @@ export default function Home() {
         return null;
     }
   }
+    
   async function handleSubmit() {
     try {
       const response = await fetch(`/api`, {
@@ -68,7 +68,7 @@ export default function Home() {
     setCurrentStep((prev) => (prev === NUMBER_OF_STEPS - 1 ? prev : prev + 1));
 
   return (
-    <Flowbite theme={{mode:"dark"}}>
+    <Flowbite theme={{ mode: "dark" }}>
       <div className="text-center">
         <Navbar />
         <div className="heroImage h-[40rem]">
@@ -78,10 +78,11 @@ export default function Home() {
               <Stepper
                 currentStep={currentStep}
                 numberOfSteps={NUMBER_OF_STEPS}
+                
               />
               <br />
-              <div className="absolute top-14 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 dark:text-white h-96">
-                <div className="space-y-6  mt-16">
+              <div className="absolute top-16 w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700 dark:text-white h-96">
+                <div className="space-y-6  mt-2">
                   {getSectionComponent(currentStep)}
                   {currentStep == NUMBER_OF_STEPS - 1 ? null : (
                     <button
